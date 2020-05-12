@@ -949,8 +949,8 @@
           "name" : "Get From Primary Queue",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 304.0,
-            "y" : 424.0
+            "x" : 312.0,
+            "y" : 456.0
           },
           "properties" : {
             "Auto Delete Messages" : "true",
@@ -1359,53 +1359,6 @@
           "type" : "org.apache.nifi.processors.standard.UpdateCounter",
           "yieldDuration" : "1 sec"
         }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "rms-custom-processors-nar",
-            "group" : "rms",
-            "version" : "1.0-SNAPSHOT"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "15314e72-7b36-3fee-8513-c1c999f4248e",
-          "identifier" : "1bd267c5-5c48-3a3f-b6bb-5baaf2da0c53",
-          "name" : "VerifyJsonContentsProcessor",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : 2200.0,
-            "y" : 424.0
-          },
-          "properties" : {
-            "Maximum Buffer Size" : "1 MB",
-            "Character Set" : "UTF-8"
-          },
-          "propertyDescriptors" : {
-            "Maximum Buffer Size" : {
-              "displayName" : "Maximum Buffer Size",
-              "identifiesControllerService" : false,
-              "name" : "Maximum Buffer Size",
-              "sensitive" : false
-            },
-            "Character Set" : {
-              "displayName" : "Character Set",
-              "identifiesControllerService" : false,
-              "name" : "Character Set",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : {
-            "background-color" : "#0eb067"
-          },
-          "type" : "rms.processors.json.VerifyJsonContentsProcessor",
-          "yieldDuration" : "1 sec"
-        }, {
           "autoTerminatedRelationships" : [ "success" ],
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -1489,6 +1442,53 @@
             "background-color" : "#4576d1"
           },
           "type" : "org.apache.nifi.processors.standard.LogAttribute",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "rms-custom-processors-nar",
+            "group" : "rms",
+            "version" : "1.0-SNAPSHOT"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "15314e72-7b36-3fee-8513-c1c999f4248e",
+          "identifier" : "1bd267c5-5c48-3a3f-b6bb-5baaf2da0c53",
+          "name" : "VerifyJsonContentsProcessor",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 2200.0,
+            "y" : 424.0
+          },
+          "properties" : {
+            "Maximum Buffer Size" : "1 MB",
+            "Character Set" : "UTF-8"
+          },
+          "propertyDescriptors" : {
+            "Maximum Buffer Size" : {
+              "displayName" : "Maximum Buffer Size",
+              "identifiesControllerService" : false,
+              "name" : "Maximum Buffer Size",
+              "sensitive" : false
+            },
+            "Character Set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "Character Set",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : {
+            "background-color" : "#0eb067"
+          },
+          "type" : "rms.processors.json.VerifyJsonContentsProcessor",
           "yieldDuration" : "1 sec"
         }, {
           "autoTerminatedRelationships" : [ ],
