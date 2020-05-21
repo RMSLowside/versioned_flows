@@ -655,7 +655,7 @@
           "identifier" : "cba1ecbd-dc26-3b14-8722-a8e6f7f2ed3c",
           "position" : {
             "x" : 1120.0,
-            "y" : 464.0
+            "y" : 528.0
           }
         }, {
           "componentType" : "FUNNEL",
@@ -690,8 +690,8 @@
           "identifier" : "9b760773-8cc3-308c-a8c4-335b2f6b3bb4",
           "label" : "1) Put the original message and GUIDE into Dynamo\n for future reprocessing",
           "position" : {
-            "x" : 3648.0,
-            "y" : 552.0
+            "x" : 3672.0,
+            "y" : 624.0
           },
           "style" : {
             "font-size" : "12px"
@@ -785,11 +785,11 @@
           "componentType" : "LABEL",
           "groupIdentifier" : "15314e72-7b36-3fee-8513-c1c999f4248e",
           "height" : 40.0,
-          "identifier" : "521fc353-3472-35d9-9d59-e0bfe1322877",
-          "label" : "1) Count number of documents ingested on this box since\n last NiFi restart",
+          "identifier" : "79d6598c-fef7-32d6-a3bf-014ce9c11c23",
+          "label" : "1) Get rules decision from Rules Engine\n2) Attach decision as Flow File Attribute",
           "position" : {
-            "x" : 1512.0,
-            "y" : 552.0
+            "x" : 4384.0,
+            "y" : 448.0
           },
           "style" : {
             "font-size" : "12px"
@@ -799,11 +799,11 @@
           "componentType" : "LABEL",
           "groupIdentifier" : "15314e72-7b36-3fee-8513-c1c999f4248e",
           "height" : 40.0,
-          "identifier" : "79d6598c-fef7-32d6-a3bf-014ce9c11c23",
-          "label" : "1) Get rules decision from Rules Engine\n2) Attach decision as Flow File Attribute",
+          "identifier" : "521fc353-3472-35d9-9d59-e0bfe1322877",
+          "label" : "1) Count number of documents ingested on this box since\n last NiFi restart",
           "position" : {
-            "x" : 4384.0,
-            "y" : 384.0
+            "x" : 1520.0,
+            "y" : 448.0
           },
           "style" : {
             "font-size" : "12px"
@@ -832,7 +832,7 @@
           "label" : "Calls a internal API endpoint",
           "position" : {
             "x" : 4736.0,
-            "y" : 448.0
+            "y" : 504.0
           },
           "style" : {
             "background-color" : "#d6fff1",
@@ -949,12 +949,12 @@
           "name" : "Get From Primary Queue",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 640.0,
-            "y" : 648.0
+            "x" : 312.0,
+            "y" : 488.0
           },
           "properties" : {
             "Auto Delete Messages" : "true",
-            "Queue URL" : "https://sqs.us-east-2.amazonaws.com/055276781719/records-ingest-queue",
+            "Queue URL" : "${SECONDARY_QUEUE}",
             "Receive Message Wait Time" : "0 sec",
             "AWS Credentials Provider service" : "ec757a2a-c1df-33ce-acda-0b5b82f38809",
             "Batch Size" : "10",
@@ -1133,7 +1133,7 @@
           },
           "properties" : {
             "Auto Delete Messages" : "true",
-            "Queue URL" : "https://sqs.us-east-2.amazonaws.com/055276781719/fake-outside-queue",
+            "Queue URL" : "${PRIMARY_QUEUE}",
             "Receive Message Wait Time" : "0 sec",
             "AWS Credentials Provider service" : "ec757a2a-c1df-33ce-acda-0b5b82f38809",
             "Batch Size" : "10",
@@ -1329,7 +1329,7 @@
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : 1520.0,
-            "y" : 672.0
+            "y" : 488.0
           },
           "properties" : {
             "counter-name" : "Documents Ingested",
@@ -1376,7 +1376,7 @@
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : 2200.0,
-            "y" : 424.0
+            "y" : 488.0
           },
           "properties" : {
             "Maximum Buffer Size" : "1 MB",
@@ -1508,7 +1508,7 @@
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : 2928.0,
-            "y" : 424.0
+            "y" : 496.0
           },
           "properties" : {
             "Destination" : "flowfile-attribute",
@@ -1623,7 +1623,7 @@
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : 4384.0,
-            "y" : 424.0
+            "y" : 496.0
           },
           "properties" : {
             "Maximum Buffer Size" : "1 MB",
@@ -1797,11 +1797,11 @@
           "name" : "PutDynamoDB",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 3648.0,
-            "y" : 424.0
+            "x" : 3672.0,
+            "y" : 496.0
           },
           "properties" : {
-            "Table Name" : "records-original-message",
+            "Table Name" : "${ORIGINAL_RECORDS_TABLE_NAME}",
             "Hash Key Value Type" : "string",
             "Hash Key Name" : "guide",
             "Character set of document" : "UTF-8",
